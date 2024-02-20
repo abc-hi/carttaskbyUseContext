@@ -1,0 +1,18 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color:chartreuse;
+     /* To evenly distribute the cards */
+}
+
+.flex-container > .card {
+    width: calc(50% - 20px); /* Adjusted width for two cards per row */
+    margin: 10px;
+}
+.heading
+{
+    border: 1px soild black;
+    background-color: crimson;
+text-align: center;
+}
