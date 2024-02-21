@@ -46,7 +46,7 @@ const Cart = () => {
     <Carousel>
                 {item.images.map((img, imgIndex) => (
                     <Carousel.Item key={imgIndex}>
-                        <img src={img} className="d-block w-30" alt={`Image ${imgIndex}`} />
+                        <img src={img} className="d-block w-30" style={{width:'300px'}} alt={`Image ${imgIndex}`} />
                     </Carousel.Item>
                 ))}
             </Carousel>
