@@ -33,39 +33,48 @@ const Cart = () => {
            <div className="heading">
             <h1>Total Quantity: {totalQuantity}</h1>
             <h1>Total Price: {totalPrice}</h1></div>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
             {data.map((item, index) => (
-                <span key={index} className="card text-dark bg-light mb-3"col-lg-2>
-                  <div class="flex-container" ><div>  <Carousel>
-                        {item.images.map((img, imgIndex) => (
-                            <Carousel.Item key={imgIndex}>
-                                <img src={img} className="d-block w-30" alt={`Image ${imgIndex}`} />
-                            </Carousel.Item>
-                        ))}
-                    </Carousel>
-                    <div className="card-body">
-                        <p className="card-title"><h5>{item.title}</h5></p>
-                        <p className="card-text"><h5>{item.description}</h5></p>
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item"><h5>ID: {item.id}</h5></li>
-                            <li className="list-group-item"><h5>Price: {item.price}</h5></li>
-                            <li className="list-group-item"><h5>Discount Percentage: {item.discountPercentage}</h5></li>
-                            <li className="list-group-item"><h5>Rating: {item.rating}</h5></li>
-                            <li className="list-group-item"><h5>Stock: {item.stock}</h5></li>
-                            <li className="list-group-item"><h5>Brand: {item.brand}</h5></li>
-                            <li className="list-group-item"><h5>Category: {item.category}</h5></li>
-                        </ul>
-                        <button onClick={() => handleIncrease(item.id, item.quantity || 1)}>+</button>
+                
+
+
+
+
+
+  <div class="col">
+    <div class="card">
+    <Carousel>
+                {item.images.map((img, imgIndex) => (
+                    <Carousel.Item key={imgIndex}>
+                        <img src={img} className="d-block w-30" alt={`Image ${imgIndex}`} />
+                    </Carousel.Item>
+                ))}
+            </Carousel>
+      {/* <img src="..." class="card-img-top" alt="..."> */}
+      <div class="card-body">
+        <h4 class="card-title">{item.title}</h4>
+        <p className="card-text"><h4>{item.description}</h4></p>
+        <h5 class="card-title">ID: {item.id}</h5>
+        <h5 class="card-title">Price: {item.price}</h5>
+        <h5 class="card-title">Discount Percentage: {item.discountPercentage}</h5>
+        <h5 class="card-title">Rating: {item.rating}</h5>
+        <h5 class="card-title">Stock: {item.stock}</h5>
+        <h5 class="card-title">Brand: {item.brand}</h5>
+        <h5 class="card-title">Category: {item.category}</h5>
+        <button onClick={() => handleIncrease(item.id, item.quantity || 1)}>+</button>
                         <button onClick={() => handleDecrease(item.id, item.quantity || 1)}>-</button>
                         <button onClick={() => handleRemove(item.id)}>Remove</button>
 
-                    </div>
-                    </div>
-                    </div>
-                    <div className="card-footer text-muted">
-                        Last updated 3 mins ago
-                    </div>
-                </span>
-            ))}
+      </div>
+    </div>
+    
+  </div>
+             ))}
+</div>
+
+
+                
+           
         </div>
     );
 };
